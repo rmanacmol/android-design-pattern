@@ -1,4 +1,5 @@
 package com.rvader.designpatternandroid.singleton
 
-class Singleton {
+object Singleton {
+    var textString: String = ""
 }
