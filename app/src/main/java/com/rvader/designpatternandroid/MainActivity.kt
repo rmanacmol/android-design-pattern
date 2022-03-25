@@ -2,6 +2,8 @@ package com.rvader.designpatternandroid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.rvader.designpatternandroid.builder.BikeUpgrade
+import com.rvader.designpatternandroid.builder.BikeUpgrade2
 import com.rvader.designpatternandroid.factory.Coffee
 import com.rvader.designpatternandroid.factory.CoffeeFactory
 import com.rvader.designpatternandroid.factory.CoffeeTypes
@@ -28,5 +30,17 @@ class MainActivity : AppCompatActivity() {
         //Factory-
         val coffee = CoffeeFactory.getCoffee(Type.LATTE)
         toast(coffee.name() + " " + coffee.recipe())
+
+        //Builder-
+        val bikeUpgrade = BikeUpgrade.Builder()
+            .frame(true)
+            .breaks(true)
+            .saddle(true).build()
+        toast("Upgrade frame: " + bikeUpgrade.frame)
+
+        val bikeUpgrade2 = BikeUpgrade2(false, true)
+        toast("Upgrade frame: " + bikeUpgrade2.frame)
+
+
     }
 }
